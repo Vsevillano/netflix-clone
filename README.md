@@ -1,46 +1,51 @@
-# Getting Started with Create React App and Redux
+# Inicialización del proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+` npx create-react-app netflix-clone --template redux `
 
-## Available Scripts
+### Proceso de limpieza
 
-In the project directory, you can run:
+### App.js - Layout inicial
 
-### `npm start`
+- Cream os las rutas
+- Renderizamos Login o el resto del app condicionado a la existencia de un usuario
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Estilos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Utilizamos useStyles para crear una infraestructura que nos permita asignar estilos a cada componente
 
-### `npm test`
+#### Crear las carpetas de componentes: Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Creamos la infraestructura: Home, Login, Paypal, Profile, SignUp
 
-### `npm run build`
+#### Estilos para los componentes Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Crear la carpeta de components más secundarios (no son páginas)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Creamos la infraestructura del resto de componentes: Banner, Header, Plans y Row
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Comenzamos a trabajar con el componente Header
 
-### `npm run eject`
+- Importamos el logo
+- Añadir clase transparente con listener en el scroll. Una vez hecho, lo desmontamos con el return de useEffect.
+- Añadimos al AppBar una clase transparent condicional.
+- Añadimos rutas al logo y otros elementos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Comenzamos a trabajar con el Banner
+- Importado imagen como backgroundImage
+- En React, tenemos que acompañar las backgroundImages con estilos como object-fit, background-size y background-position
+- Hemos positionado el título, botones y descripción.
+- Como la descripción viene de la API, tenemos que truncarla. Para ello declaramos la función truncate.
+- Añadido div vacío que añade un degradado de transparente a negro.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Comenzamos a trabajar con el Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Hemos creado un botón con styled components y le hemos llamado NetflixButton. Está customizado y podremos variar su longitud, color, y otros estilos, pasandole props.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Styled components para variar los estilos del input o del boton, pero para su posicionamiento le damos una clase normal.
 
-## Learn More
+- Hemo creado un input personalizado con Styled components. Le hemos llamado NetflixInput.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Tutorial seguido
+https://www.youtube.com/watch?v=kCzOaiz5e2I&ab_channel=JavaScriptDeNoobAPro
